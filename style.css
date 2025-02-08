@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#studentList, #reportsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#studentList li, #reportsList li {
+    padding: 10px;
+    background-color: #e9ecef;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+#studentList li:hover, #reportsList li:hover {
+    background-color: #d4d4d4;
+}

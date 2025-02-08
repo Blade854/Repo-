@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة التقارير المدرسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>نظام إدارة التقارير المدرسية</h1>
+
+        <!-- الأزرار الرئيسية -->
+        <button id="btnAddReport">
+            <i class="fas fa-plus-circle"></i> إضافة تقرير
+        </button>
+        <button id="btnViewReports">
+            <i class="fas fa-list-alt"></i> عرض التقارير
+        </button>
+        <button id="btnViewSummons">
+            <i class="fas fa-bell"></i> الاستدعاءات
+        </button>
+        <button id="btnImportStudents">
+            <i class="fas fa-upload"></i> استيراد قائمة التلاميذ
+        </button>
+
+        <!-- خيارات استيراد الطلاب -->
+        <div id="importOptions" class="hidden">
+            <button id="btnImportNew">
+                <i class="fas fa-trash-alt"></i> استيراد جديد
+            </button>
+            <button id="btnUpdateList">
+                <i class="fas fa-sync-alt"></i> تحديث القائمة
+            </button>
+            <input type="file" id="studentFile" accept=".csv, .xlsx">
+        </div>
+
+        <!-- نموذج إضافة تقرير -->
+        <div id="addReportForm" class="hidden">
+            <h2>إضافة تقرير جديد</h2>
+            <input type="text" id="studentSearch" placeholder="ابحث عن الطالب..." oninput="searchStudent()">
+            <ul id="studentList"></ul>
+            <div id="reportDetails" class="hidden">
+                <label for="date">التاريخ:</label>
+                <input type="date" id="date">
+                <label for="author">صاحب التقرير:</label>
+                <input type="text" id="author">
+                <label for="reason">السبب:</label>
+                <input type="text" id="reason">
+                <label for="actions">الإجراءات:</label>
+                <select id="actions" multiple>
+                    <option value="إنذار">إنذار</option>
+                    <option value="توبيخ">توبيخ</option>
+                    <option value="عرض على لجنة الإرشاد">عرض على لجنة الإرشاد</option>
+                    <option value="استدعاء الولي">استدعاء الولي</option>
+                    <option value="أخرى">أخرى</option>
+                </select>
+                <button onclick="addReport()">
+                    <i class="fas fa-save"></i> حفظ التقرير
+                </button>
+            </div>
+        </div>
+
+        <!-- عرض التقارير -->
+        <div id="viewReports" class="hidden">
+            <h2>عرض التقارير</h2>
+            <input type="text" id="studentSearchReports" placeholder="ابحث عن الطالب..." oninput="searchStudentForReports()">
+            <ul id="reportsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
